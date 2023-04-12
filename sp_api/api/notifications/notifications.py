@@ -84,7 +84,7 @@ class Notifications(Client):
             ApiResponse:
 
         """
-        return self._request(fill_query_params(kwargs.pop('path'), notification_type if isinstance(notification_type,
+        return self._request_grantless_operation(fill_query_params(kwargs.pop('path'), notification_type if isinstance(notification_type,
                                                                                                    str) else notification_type.value),
                              params={**kwargs})
 
@@ -118,7 +118,7 @@ class Notifications(Client):
             ApiResponse:
 
         """
-        return self._request(
+        return self._request_grantless_operation(
             fill_query_params(kwargs.pop('path'),
                               notification_type if isinstance(notification_type, str) else notification_type.value,
                               subscription_id),
