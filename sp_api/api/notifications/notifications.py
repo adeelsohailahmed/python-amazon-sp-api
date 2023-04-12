@@ -88,7 +88,7 @@ class Notifications(Client):
                                                                                                    str) else notification_type.value),
                              params={**kwargs})
 
-    @sp_endpoint('/notifications/v1/subscriptions/{}/{}', method='DELETE')
+    @sp_endpoint('/notifications/v2/subscriptions/{}/{}', method='DELETE')
     def delete_notification_subscription(self, notification_type: NotificationType or str, subscription_id: str,
                                          **kwargs) -> ApiResponse:
         """
